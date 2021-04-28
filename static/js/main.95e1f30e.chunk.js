@@ -1,0 +1,2 @@
+(this.webpackJsonp01_componets_list=this.webpackJsonp01_componets_list||[]).push([[0],{10:function(t,e,n){"use strict";n.r(e);var c=n(1),s=n.n(c),r=n(3),o=n.n(r),i=(n(8),n(0));var j=function(){return Object(i.jsx)(i.Fragment,{children:Object(i.jsx)("h1",{children:"tours"})})};o.a.render(Object(i.jsx)(s.a.StrictMode,{children:Object(i.jsx)(j,{})}),document.getElementById("root"))},8:function(t,e,n){}},[[10,1,2]]]);
+//# sourceMappingURL=main.95e1f30e.chunk.js.map
