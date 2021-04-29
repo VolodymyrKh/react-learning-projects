@@ -10,17 +10,26 @@ const Review = () => {
     return Math.floor(Math.random() * users.length);
   }
 
+  const checkIndex = (index) => {
+    if (index > users.length - 1) return 0;
+    if (index < 0) return users.length - 1;
+    return index;
+  };
+
   const prevPerson = () => {
-    index === 0 ? setIndex(users.length - 1) : setIndex((index) => index - 1);
+    setIndex((prevIndex) => {
+      return checkIndex(prevIndex - 1);
+    });
   };
 
   const nextPerson = () => {
-    index === users.length - 1 ? setIndex(0) : setIndex((index) => index + 1);
+    setIndex((prevIndex) => checkIndex(prevIndex + 1));
   };
 
   const randomPerson = () => {
-    const randomInd = randomIndex(users);
-    randomInd === index ? setIndex(index + 1) : setIndex(randomInd);
+    let randomInd = randomIndex(users);
+    randomInd = randomInd === index ? index + 1 : randomInd;
+    setIndex(checkIndex(randomInd));
   };
 
   return (
