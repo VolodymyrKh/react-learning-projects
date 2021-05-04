@@ -201,7 +201,7 @@ main {
 .single-tour p {
   padding: 0 1rem;
   text-align: left;
-}
+  }
 
 .single-tour:hover {
   box-shadow: var(--dark-shadow);
@@ -258,4 +258,16 @@ main {
   border: 1px solid var(--clr-red-dark);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
 }

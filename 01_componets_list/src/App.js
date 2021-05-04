@@ -19,7 +19,6 @@ function App() {
       console.log(responce.data);
       setTours(responce.data);
     } catch (e) {
-      // console.log(e);
       setError(e);
     } finally {
       setLoading(false);
