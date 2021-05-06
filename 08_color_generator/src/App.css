@@ -207,13 +207,8 @@ input.error {
 }
 
 .colors {
-    /* min-height: calc(100vh - 100px); */
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));  */
     display: flex;
     flex-wrap: wrap;
-
 }
 
 
@@ -260,4 +255,4 @@ input.error {
     text-transform: uppercase;
     font-size: 0.85rem;
     margin-top: 1rem;
-    }
+}

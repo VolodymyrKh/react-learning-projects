@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SingleColor from "./components/SingleColor";
 import Values from "values.js";
 import "./App.css";
@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
-  const [list, setList] = useState(new Values('#f2b5c7').all(10));
+  const [list, setList] = useState(new Values("#f2b5c7").all(10));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +14,6 @@ function App() {
     try {
       let colors = new Values(color).all(10);
       setList(colors);
-      // console.log(colors);
     } catch (e) {
       setError(true);
     }
@@ -23,7 +22,7 @@ function App() {
   return (
     <>
       <section className="container">
-        <h3>let's generate color</h3>
+        <h3>color shade generator</h3>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
