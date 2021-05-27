@@ -1,3 +1,75 @@
 .contact {
-    padding: 6rem 0 9.5rem;
+    padding: 6rem 0 6.5rem;
+    /* margin-bottom: 4.5rem; */
+}
+
+.contactInner {
+    display: flex;
+}
+
+.contactInfo {
+    padding: 2rem 2rem 3rem 0;
+    flex: 0 0 42.5%;
+}
+
+.contactTitle {
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.contactText {
+    margin-bottom: 2rem;
+}
+
+.contactImg {
+    width: 100%;
+    object-fit: contain;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contactInput,
+.contactMessage {
+    padding: 0.6rem 1rem 0.8rem;
+    border: none;
+    border-bottom: 3px dashed rgba(129, 103, 227, 0.2);
+    transition: all 0.3s linear;
+    outline: transparent;
+}
+
+.contactInput {
+    margin-bottom: 2rem;
+
+}
+
+.contactMessage {
+    margin: 3.2rem 0 4.5rem;
+    resize: none;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+.contactInput::placeholder,
+.contactMessage::placeholder {
+    font-style: italic;
+    color: #8B92AB;
+}
+
+.contactInput:hover,
+.contactMessage:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+@media screen and(max-width: 768px) {
+    .contactInner {
+        flex-direction: column;
+    }
 }

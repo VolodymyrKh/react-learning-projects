@@ -52,13 +52,15 @@ a {
     text-decoration: none;
 }
 
-main {
+body {
     padding-top: 112px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     background: #fff;
+    color: #4F586B;
+
 }
 
 .container {

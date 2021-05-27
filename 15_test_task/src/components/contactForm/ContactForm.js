@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../button/Button";
 import styles from "./contactForm.module.css";
 
 const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [date, setDate] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = { name, email, date, message };
+    console.log(data); // got data object and can send to server for further processing
+    setName("");
+    setEmail("");
+    setDate("");
+    setMessage("");
+  };
+
   return (
-    <section
-      className={styles.contact}
-    //   style={{ backgroundImage: "url(./img/formImg.png)" }}
-    >
+    <section className={styles.contact}>
       <div className="container">
         <div className={styles.contactInner}>
           <div className={styles.contactInfo}>
@@ -23,11 +35,46 @@ const ContactForm = () => {
               alt="contact form img"
             />
           </div>
-          <form className="contactForm">
-            <input type="text" placeholder="Name*" required />
-            <input type="email" placeholder="Email*" required />
-            <input type="date" placeholder="Date of birth*" required />
-            <textarea placeholder="Message*" required></textarea>
+          <form className={styles.contactForm} onSubmit={handleSubmit}>
+            <input
+              className={styles.contactInput}
+              value={name}
+              type="text"
+              placeholder="Name*"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              required
+            />
+            <input
+              className={styles.contactInput}
+              value={email}
+              type="email"
+              placeholder="Email*"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              required
+            />
+            <input
+              className={styles.contactInput}
+              value={date}
+              type="date"
+              placeholder="Date of birth*"
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
+              required
+            />
+            <textarea
+              className={styles.contactMessage}
+              value={message}
+              placeholder="Message*"
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+              required
+            ></textarea>
             <Button type="submit" />
           </form>
         </div>
