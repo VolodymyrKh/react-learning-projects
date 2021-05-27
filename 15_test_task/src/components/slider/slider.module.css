@@ -18,7 +18,7 @@
 }
 
 .sliderItem img {
-    width: 12rem;
+    width: 15rem;
     object-fit: contain;
 }
 
@@ -26,11 +26,19 @@
     display: block;
     padding: 1rem 0;
     font-size: 1.125rem;
-    line-height: 1.75rem;
+    line-height: 1.75;
     font-weight: 500;
     text-transform: capitalize;
 }
 
-.swiper {
-    padding: 2rem 0 3rem;
+@media screen and (max-width: 768px){
+    .sliderHeading {
+        font-size: 1.5rem;
+        text-align: left;
+        padding: 1rem 1rem 1.5rem;
+    }
+    .sliderPosition {
+        font-size: 0.9rem;
+        line-height: 1.25;
+    }
 }

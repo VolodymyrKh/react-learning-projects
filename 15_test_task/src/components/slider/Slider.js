@@ -1,11 +1,5 @@
 import React from "react";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Keyboard,
-  Scrollbar,
-  A11y,
-} from "swiper/core";
+import SwiperCore, { Navigation, Pagination, Keyboard } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SliderItem from "./SliderItem";
 import "swiper/swiper.min.css";
@@ -17,16 +11,21 @@ import { useGlobalContext } from "../../context";
 SwiperCore.use([Keyboard, Pagination, Navigation]);
 
 const Slider = () => {
-  const { sliderItems } = useGlobalContext();
+  const { sliderItems, size } = useGlobalContext();
+
+  const nav = size <= 768 ? false : true;  
+  const slides = size <= 576 ? 2 : 6;
 
   return (
     <section className={styles.slider}>
       <h2 className={styles.sliderHeading}>
-        iCaria Living - Explore the wonders of life
+        {nav
+          ? "iCaria Living - Explore the wonders of life"
+          : "Choose your profession for more details"}
       </h2>
       <Swiper
         spaceBetween={32}
-        slidesPerView={6}
+        slidesPerView={slides}
         pagination={{
           dynamicBullets: true,
           clickable: true,
@@ -34,8 +33,8 @@ const Slider = () => {
         keyboard={{
           enabled: true,
         }}
-        navigation={true}
-        style={{ padding: "2rem 1.6rem 2.75rem" }}
+        navigation={nav}
+        style={{ padding: "2rem 1.6rem 2.75rem", width: "100%" }}
       >
         {sliderItems.map((item) => {
           return (

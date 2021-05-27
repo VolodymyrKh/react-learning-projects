@@ -32,6 +32,7 @@ export const serviceData = [
 export const bannerData = {
   title: "Become a five-star professional!",
   img: "./img/bannerBG.jpg",
+  imgMob: './img/bannerBGMob.jpg',
   content:
     "Join the growing community of professional icarians. Use the iCaria professional services to launch and grow your business, manage your clients, organize your schedule, and simplify your payments. With iCaria certification, your customers will be assured safe and secure access to services.",
 };
@@ -48,10 +49,4 @@ export const sliderData = [
   { id: 19, img: "./img/slider/img-9.jpg", position: "senior care director" },
 ];
 
-export const formData = {
-    title: 'Request info',
-    img: './img/formImg.png',
-    content: `Got a question? Need to see a demo? Want to start your free trial
-              subscription? We'd love to hear from you! Contact us and we will
-              get back to you shortly.` 
-}
+

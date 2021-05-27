@@ -53,7 +53,7 @@ a {
 }
 
 body {
-    padding-top: 112px;
+    padding-top: 96px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -64,11 +64,12 @@ body {
 }
 
 .container {
-    max-width: 1322px;
+    max-width: 1332px;
     margin: 0 auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
 
 .swiper-pagination .swiper-pagination-bullet {
     background: linear-gradient(236.84deg, #9C8BEA 1.49%, #544695 105.35%);
@@ -101,4 +102,8 @@ body {
 
 .swiper-container .swiper-button-next::after {
     background: url(./components/slider/img/nextArrow.svg) center no-repeat;
+}
+
+.mySwiper .swiper-pagination.swiper-pagination-clickable {
+    left: -39%;
 }

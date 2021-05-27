@@ -10,6 +10,8 @@
 .contactInfo {
     padding: 2rem 2rem 3rem 0;
     flex: 0 0 42.5%;
+    display: flex;
+    flex-direction: column;
 }
 
 .contactTitle {
@@ -41,6 +43,7 @@
     border-bottom: 3px dashed rgba(129, 103, 227, 0.2);
     transition: all 0.3s linear;
     outline: transparent;
+    width: 100%;
 }
 
 .contactInput {
@@ -68,8 +71,32 @@
         0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-@media screen and(max-width: 768px) {
-    .contactInner {
-        flex-direction: column;
+@media screen and (max-width: 768px) {
+    .contact {
+        padding-top: 4rem;
     }
+
+    .contactInner {
+        flex-wrap: wrap;
+    }
+
+    .contactInfo {
+        padding: 0 0 1.5rem;
+        flex: 0 0 100%;
+    }
+
+    .contactText {
+        margin: 0;
+        text-align: center;
+    }
+
+    .contactImg {
+        order: -1;
+    }
+
+    .contactForm {
+        display: block;
+        text-align: center;
+    }
+
 }
