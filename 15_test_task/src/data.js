@@ -47,3 +47,11 @@ export const sliderData = [
   { id: 18, img: "./img/slider/img-8.jpg", position: "astrologer" },
   { id: 19, img: "./img/slider/img-9.jpg", position: "senior care director" },
 ];
+
+export const formData = {
+    title: 'Request info',
+    img: './img/formImg.png',
+    content: `Got a question? Need to see a demo? Want to start your free trial
+              subscription? We'd love to hear from you! Contact us and we will
+              get back to you shortly.` 
+}

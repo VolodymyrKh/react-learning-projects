@@ -16,7 +16,7 @@ const Button = ({ text, type, size }) => {
 Button.defaultProps = {
   text: "request info",
   type: "button",
-  size: "2rem",
+  size: "2.5rem",
 };
 
 export default Button;
