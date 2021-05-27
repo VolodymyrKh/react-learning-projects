@@ -1,0 +1,110 @@
+.services {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    position: relative;
+}
+
+.services::before,
+.services::after,
+.title::before,
+.title::after,
+.itemImage::after,
+.itemTitle::before,
+.itemTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.services::before,
+.services::after {
+    height: 6rem;
+    background: #ff61614d;
+}
+
+.title {
+    padding: 2rem 0 1.5rem;
+    position: relative;
+    text-transform: capitalize;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+.title::before {
+    background: #b75cff4d;
+    height: 2rem;
+}
+
+.title::after {
+    background: #5ca8ff4d;
+    height: 1.5rem;
+}
+
+.services::before,
+.title::before,
+.itemTitle::before {
+    top: 0;
+}
+
+.services::after,
+.title::after,
+.itemTitle::after {
+    bottom: 0;
+}
+
+.itemsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 0 0 calc(25% - 1.18rem)
+}
+
+@media screen and (max-width: 992px) {
+    .itemsContainer {
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex: 0 0 calc(50% - 1.5rem);
+        margin-bottom: 2rem;
+    }
+}
+
+.itemImage {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    position: relative;
+}
+
+.itemImage img {
+    width: 73px;
+    object-fit: contain;
+}
+
+.itemImage::after {
+    bottom: 0;
+    height: 0.75rem;
+    background: #96ff5c4d;
+}
+
+.itemTitle {
+    padding: 1.5rem 0 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.itemTitle::before {
+    height: 1.5rem;
+    background: #5ca8ff4d;
+}
+
+.itemTitle::after {
+    height: 1rem;
+    background: #5cffed4d;
+}

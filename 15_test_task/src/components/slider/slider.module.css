@@ -1,0 +1,37 @@
+.slider {
+    text-align: center;
+    /* margin-bottom: 1.375rem; */
+    margin: 0 auto 1.375rem;
+    max-width: 1372px;
+    width: 100%
+}
+
+.sliderHeading {
+    padding: 2rem 0 1.5rem;
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.sliderImg {
+    border-radius: 1.25rem;
+    overflow: hidden;
+}
+
+.sliderItem img {
+    width: 12rem;
+    object-fit: contain;
+}
+
+.sliderPosition {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.swiper {
+    padding: 2rem 0 3rem;
+}

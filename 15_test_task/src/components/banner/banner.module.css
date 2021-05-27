@@ -1,0 +1,37 @@
+.banner {
+    margin: 4.5rem 0 7.5rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6.5rem 0;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(86.94deg, #2C313D -21.23%, rgba(56, 59, 66, 0) 52.58%);
+}
+
+.bannerContent {
+    position: relative;
+    z-index: 1;
+    max-width: 26rem;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.bannerHeading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.16;
+    margin-bottom: 1.5rem;
+}
+
+.bannerText {
+    margin-bottom: 2rem;
+}
