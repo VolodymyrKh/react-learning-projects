@@ -1,0 +1,16 @@
+.container {
+    width: 30vw;
+    margin: 5rem auto 0;
+    text-align: center;
+    font-size: 2rem;
+    }
+
+.display {
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.btn-controls{
+    display: flex;
+    justify-content: space-around;
+}
