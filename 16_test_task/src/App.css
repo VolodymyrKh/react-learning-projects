@@ -1,16 +1,94 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[class] {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+
 .container {
-    width: 30vw;
+    max-width: 500px;
+    padding: 2rem 0.5rem;
     margin: 5rem auto 0;
     text-align: center;
-    font-size: 2rem;
-    }
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgb(134, 116, 119);
+    ;
+}
 
 .display {
     display: block;
-    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 8rem;
 }
 
-.btn-controls{
+.btn-controls {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn-controls button {
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgba(87, 64, 43, 0.726);
+    color: #FFF;
+    padding: 0.2rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-controls button:disabled {
+    background-color: rgba(177, 157, 139, 0.726);
+}
+
+.btn-controls button:hover {
+    cursor: pointer;
 }
