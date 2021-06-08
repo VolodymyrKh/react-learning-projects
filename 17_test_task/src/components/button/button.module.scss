@@ -1,0 +1,29 @@
+@import '../../scss/vars';
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: $itemsBG;
+    border: 1px solid $borderColor;
+    border-radius: 0.25rem;
+    color: $primaryLink;
+    transition: all 0.3s linear;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+
+        img {
+            object-fit: contain;
+        }
+    }
+}

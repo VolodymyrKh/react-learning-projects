@@ -1,0 +1,30 @@
+@import '../../scss/vars';
+
+.logIn {
+    padding: 1.5rem 3rem 2rem;
+    background: #fff;
+    border: 1px solid $borderColor;
+    border-radius: 6px;
+    text-align: center;
+
+    &__title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+    &__registerText {
+        margin-bottom: 1.5rem;
+    }
+
+    &__registerLink {
+        margin-left: 0.25rem;
+        color: $primaryLink;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+}
