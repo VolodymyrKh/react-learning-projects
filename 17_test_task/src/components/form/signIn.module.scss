@@ -27,4 +27,61 @@
         }
     }
 
+    span {
+        display: block;
+        position: relative;
+        color: $text;
+        font-size: 1.12rem;
+        margin-bottom: 0.875rem;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 41%;
+            height: 1px;
+            background-color: #E2E9F3;
+        }
+
+        &::before {
+            top: 50%;
+        }
+
+        &::after {
+            right: 0;
+            bottom: 50%;
+        }
+    }
+
+    &__email,
+    &__password {
+        margin-bottom: 1.5rem;
+    }
+
+    &__label {
+        font-size: 0;
+    }
+
+    &__input {
+        padding: 0.62rem 0.5rem;
+        border: 1px solid #CDD7E5;
+        border-radius: 0.25rem;
+        background: $itemsBG;
+        outline: transparent;
+        width: 100%;
+        transition: all 0.3s linear;
+
+        &::placeholder {
+            text-transform: capitalize;
+            color: #929BAD;
+            line-height: 1.2;
+        }
+
+        &:hover {
+             box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15),
+             0 5px 5px rgba(0, 0, 0, 0.12);
+             cursor: pointer;
+        }
+    }
 }
