@@ -1,11 +1,41 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "../button";
+import validation from "../../validateForm";
 import styles from "./signIn.module.scss";
 
+
 export const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [store, setStore] = useState(false);
+
+  const [errors, setErrors] = useState({});
+
+  const refMail = useRef(null);
+  const refPassword = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errObj = validation({ email, password });
+
+    setErrors(errObj);
+    if (!Object.keys(errObj).length) {
+      const dataObj = { email, password, store }; // dataObj is ready for further processing
+      setEmail("");
+      setPassword("");
+      setStore(false);
+    } else if (errObj.email) {
+      refMail.current.focus();
+    } else {
+      refPassword.current.focus( );
+    }
+  };
+
   return (
     <div className="container">
-      <form className={styles.logIn}>
+      <form className={styles.logIn} onSubmit={handleSubmit}>
+        {/* ------------------------------ Form heading-------------------------------- */}
+
         <h1 className={styles.logIn__title}>Log in</h1>
         <p className={styles.logIn__registerText}>
           Don’t have an account?
@@ -13,6 +43,8 @@ export const SignIn = () => {
             Sign up
           </a>
         </p>
+        {/* ------------------------------ Accounts login-------------------------------- */}
+
         <Button
           {...{
             text: "Continue with Google",
@@ -27,33 +59,71 @@ export const SignIn = () => {
             mb: "0.75rem",
           }}
         />
-        <span>or</span>
+        <span className={styles.logIn__choice}>or</span>
+        {/* ------------------------------ Email input-------------------------------- */}
 
         <div className={styles.logIn__email}>
           <label htmlFor="email" className={styles.logIn__label}>
             user email
           </label>
           <input
-            className={styles.logIn__input}
+            ref={refMail}
+            className={`${styles.logIn__input} ${
+              errors.email && styles.logIn__danger
+            }`}
+            value={email}
             id="email"
-            type="email"
             placeholder="email"
-            required
+            onChange={(e) => setEmail(e.target.value)}
           />
+          {errors.email && (
+            <p className={styles.logIn__error}>{errors.email}</p>
+          )}
         </div>
+        {/* ------------------------------ Password input-------------------------------- */}
 
         <div className={styles.logIn__password}>
           <label htmlFor="password" className={styles.logIn__label}>
             user password
           </label>
           <input
-            className={styles.logIn__input}
+            ref={refPassword}
+            className={`${styles.logIn__input} ${
+              errors.password && styles.logIn__danger
+            }`}
+            value={password}
             id="password"
             type="password"
             placeholder="password"
-            required
+            onChange={(e) => setPassword(e.target.value)}
           />
+          {errors.password && (
+            <p className={styles.logIn__error}>{errors.password}</p>
+          )}
         </div>
+
+        <div className={styles.logIn__recovery}>
+          <a className={styles.logIn__recoveryLink} href="#">
+            Forgot password?
+          </a>
+        </div>
+        {/* ------------------------------ Checkbox-------------------------------- */}
+
+        <div className={styles.logIn__check}>
+          <input
+            type="checkbox"
+            checked={store}
+            onChange={(e) => setStore(e.currentTarget.checked)}
+            id="check"
+          />
+          <span className={styles.logIn__checkBox}></span>
+          <label htmlFor="check">Remember me</label>
+        </div>
+        {/* ------------------------------ Submit button-------------------------------- */}
+
+        <button className={styles.logIn__submitBtn} type="submit">
+          continue
+        </button>
       </form>
     </div>
   );
