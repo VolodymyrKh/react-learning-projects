@@ -1,33 +1,47 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../button";
+import { toast } from "react-toastify";
 import validation from "../../validateForm";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./signIn.module.scss";
 
+toast.configure();
 
 export const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [store, setStore] = useState(false);
-
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
   const refMail = useRef(null);
   const refPassword = useRef(null);
 
+  useEffect(() => {
+    if (isSubmitted) {
+      setErrors(validation({ email, password }));
+    }
+  }, [email, password]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
     const errObj = validation({ email, password });
-
     setErrors(errObj);
+    
     if (!Object.keys(errObj).length) {
       const dataObj = { email, password, store }; // dataObj is ready for further processing
       setEmail("");
       setPassword("");
       setStore(false);
+      setIsSubmitted(false);
+       toast.success(`Form successfully submitted`, {
+         autoClose: 2500,
+       });
     } else if (errObj.email) {
       refMail.current.focus();
     } else {
-      refPassword.current.focus( );
+      refPassword.current.focus();
     }
   };
 
